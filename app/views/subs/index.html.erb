@@ -1,0 +1,11 @@
+<h1>Here are all the Subcategories Present</h1>
+
+
+<% @subs.each do |sub| %>
+    <label>Title: <%= sub.title %></label>
+    <br>
+    <label>Description: <%= sub.description %></label>
+    <a href="<%= edit_sub_url(sub) %>">Edit</a>
+    <br>
+    <br>
+<%  end %>

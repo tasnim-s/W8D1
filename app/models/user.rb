@@ -45,17 +45,17 @@ class User < ApplicationRecord
     end
 
     def reset_session_token!
-        self.session_token = User.generate_session_token
+        self.session_token = User.generate_unique_secure_token
         self.save!
         self.session_token
     end
 
     private
-    def generate_session_token
+    def generate_unique_secure_token
         SecureRandom.urlsafe_base64
     end
 
     def ensure_session_token
-        self.session_token ||= User.generate_session_token
+        self.session_token ||= User.generate_unique_secure_token
     end
 end

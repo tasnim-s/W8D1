@@ -1,9 +1,7 @@
 class ApplicationController < ActionController::Base
     helper_method :current_user, :logged_in?
 
-    def ensure_moderator
-        @current_user.id == @current_user.sub.moderator_id
-    end
+    
 
     def current_user
         @current_user ||= User.find_by(session_token: session[:session_token])

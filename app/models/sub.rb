@@ -10,7 +10,7 @@
 #  updated_at   :datetime         not null
 #
 class Sub < ApplicationRecord
-    validates :string, presence: true 
+    validates :title, presence: true 
     validates :description, presence: true 
 
     belongs_to :moderator,

@@ -24,7 +24,8 @@ class UsersController < ApplicationController
 
     def index
         @users = User.all
-        render :index
+        # render :index
+        redirect_to subs_url
     end
 
     private
